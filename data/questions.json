@@ -1,0 +1,930 @@
+[
+  {
+    "id": "A01",
+    "issue": "A",
+    "topic": "Βασικές έννοιες",
+    "difficulty": "easy",
+    "question": "Ποιο χαρακτηριστικό κάνει μια σειρά μετρήσεων χρονοσειρά;",
+    "choices": [
+      "Οι παρατηρήσεις είναι πάντα κανονικά κατανεμημένες",
+      "Η χρονική σειρά/διάταξη των παρατηρήσεων περιέχει πληροφορία",
+      "Υπάρχουν τουλάχιστον 100 παρατηρήσεις",
+      "Η μεταβλητή είναι συνεχής"
+    ],
+    "correct": 1,
+    "explanation": "Στη χρονοσειρά η σειρά των παρατηρήσεων έχει σημασία· η αναδιάταξη καταστρέφει χρονική πληροφορία.",
+    "source": "Τεύχος Α΄ — Κεφ. 1.1"
+  },
+  {
+    "id": "A02",
+    "issue": "A",
+    "topic": "Βασικές έννοιες",
+    "difficulty": "easy",
+    "question": "250 φαρμακεία × 96 μήνες είναι κυρίως ποια δομή δεδομένων;",
+    "choices": [
+      "Cross-sectional",
+      "Μονομεταβλητή χρονοσειρά",
+      "Panel / longitudinal panel",
+      "Case-control"
+    ],
+    "correct": 2,
+    "explanation": "Πολλές μονάδες παρακολουθούνται σε πολλές χρονικές στιγμές, άρα πρόκειται για panel δομή.",
+    "source": "Τεύχος Α΄ — Κεφ. 1.2"
+  },
+  {
+    "id": "A03",
+    "issue": "A",
+    "topic": "Βασικές έννοιες",
+    "difficulty": "medium",
+    "question": "Γιατί η αυτοσυσχέτιση στα κατάλοιπα είναι πρόβλημα;",
+    "choices": [
+      "Επειδή αποδεικνύει κανονικότητα",
+      "Επειδή σημαίνει ότι έμεινε συστηματική χρονική δομή που το μοντέλο δεν αξιοποίησε",
+      "Επειδή μειώνει πάντα τη μέση τιμή",
+      "Επειδή κάνει τα δεδομένα cross-sectional"
+    ],
+    "correct": 1,
+    "explanation": "Τα κατάλοιπα θα πρέπει να μοιάζουν με λευκό θόρυβο. Αυτοσυσχέτιση στα κατάλοιπα σημαίνει ανεπαρκή προδιαγραφή.",
+    "source": "Τεύχος Α΄ — Κεφ. 1"
+  },
+  {
+    "id": "A04",
+    "issue": "A",
+    "topic": "Trend / Seasonality",
+    "difficulty": "easy",
+    "question": "Τι είναι trend σε μια χρονοσειρά;",
+    "choices": [
+      "Η μακροχρόνια κατεύθυνση της σειράς",
+      "Ο τυχαίος θόρυβος",
+      "Η περιοδικότητα που επαναλαμβάνεται ακριβώς κάθε μήνα",
+      "Η διαφορά μεταξύ δύο καταλοίπων"
+    ],
+    "correct": 0,
+    "explanation": "Trend είναι η αργά μεταβαλλόμενη μακροχρόνια κατεύθυνση, όχι απαραίτητα γραμμική.",
+    "source": "Τεύχος Α΄ — Κεφ. 1.6"
+  },
+  {
+    "id": "A05",
+    "issue": "A",
+    "topic": "Decomposition",
+    "difficulty": "medium",
+    "question": "Σε STL, τι υποδηλώνει ένα remainder με σαφή δομή/autocorrelation;",
+    "choices": [
+      "Η αποσύνθεση εξήγησε τα πάντα",
+      "Υπάρχει πιθανή μοντελοποιήσιμη δυναμική που δεν έχει αφαιρεθεί",
+      "Η σειρά είναι υποχρεωτικά stationary",
+      "Πρέπει να διαγράψουμε τις ακραίες τιμές"
+    ],
+    "correct": 1,
+    "explanation": "Δομημένο remainder σημαίνει ότι υπάρχει πληροφορία που μπορεί να απαιτεί ARMA/άλλη μοντελοποίηση.",
+    "source": "Τεύχος Α΄ — Κεφ. 4.5"
+  },
+  {
+    "id": "A06",
+    "issue": "A",
+    "topic": "Decomposition",
+    "difficulty": "medium",
+    "question": "Ποια ένδειξη ευνοεί πολλαπλασιαστική αντί για προσθετική εποχικότητα;",
+    "choices": [
+      "Το εποχικό πλάτος αυξάνει περίπου αναλογικά με το επίπεδο της σειράς",
+      "Η σειρά έχει αρνητικές τιμές",
+      "Δεν υπάρχει εποχικότητα",
+      "Το seasonal component είναι σταθερό σε απόλυτο μέγεθος"
+    ],
+    "correct": 0,
+    "explanation": "Αναλογική αύξηση εποχικού πλάτους με το επίπεδο είναι ένδειξη multiplicative structure.",
+    "source": "Τεύχος Α΄ — Decomposition"
+  },
+  {
+    "id": "A07",
+    "issue": "A",
+    "topic": "Data Audit",
+    "difficulty": "medium",
+    "question": "Ποια ενέργεια πρέπει να προηγείται της επιλογής μοντέλου;",
+    "choices": [
+      "Data audit, πλήρες ημερολόγιο και γραφική διερεύνηση",
+      "Auto-ARIMA χωρίς γραφήματα",
+      "Τυχαίο 80/20 split",
+      "Αφαίρεση όλων των outliers"
+    ],
+    "correct": 0,
+    "explanation": "Το πρόγραμμα επιμένει ότι δεν ξεκινάμε μοντέλο σε βρόμικα ή μη ελεγμένα δεδομένα.",
+    "source": "Τεύχος Α΄ — Μέρη 1–4"
+  },
+  {
+    "id": "A08",
+    "issue": "A",
+    "topic": "Forecasting principles",
+    "difficulty": "medium",
+    "question": "Ποιος κανόνας ισχύει σε όλο το πρόγραμμα;",
+    "choices": [
+      "Αξιολόγηση μόνο in-sample",
+      "Κανένα σοβαρό μοντέλο χωρίς benchmark",
+      "Κάθε συσχέτιση είναι αιτιότητα",
+      "Το AIC αρκεί για τελική επιλογή"
+    ],
+    "correct": 1,
+    "explanation": "Baseline/benchmark είναι υποχρεωτικό και η αξιολόγηση πρόβλεψης πρέπει να είναι out-of-sample.",
+    "source": "Τεύχος Α΄ — Κανόνες προγράμματος"
+  },
+  {
+    "id": "A09",
+    "issue": "A",
+    "topic": "Intermittent demand",
+    "difficulty": "hard",
+    "question": "Για βραδυκίνητο κωδικό φαρμακείου με πολλά μηδενικά, ποια οικογένεια είναι καταλληλότερη;",
+    "choices": [
+      "Croston / SBA / TSB",
+      "Απλό OLS",
+      "Μόνο ARIMA",
+      "VECM"
+    ],
+    "correct": 0,
+    "explanation": "Intermittent demand απαιτεί ειδικές μεθόδους όπως Croston/SBA/TSB και επιχειρησιακά service-level metrics.",
+    "source": "Τεύχος Α΄ — Εφαρμογές αποθεμάτων"
+  },
+  {
+    "id": "A10",
+    "issue": "A",
+    "topic": "Decomposition",
+    "difficulty": "hard",
+    "question": "Ποια πρόταση για την αποσύνθεση είναι σωστή;",
+    "choices": [
+      "Υπάρχει μία μοναδική αληθινή τάση",
+      "Οι παράμετροι STL μπορούν να αλλάξουν την κατανομή trend/remainder και πρέπει να δηλώνονται",
+      "Η εποχική προσαρμογή δεν αναθεωρείται ποτέ",
+      "Το STL απαιτεί πάντα stationarity"
+    ],
+    "correct": 1,
+    "explanation": "Η αποσύνθεση δεν είναι μοναδική και οι επιλογές παραμέτρων πρέπει να τεκμηριώνονται.",
+    "source": "Τεύχος Α΄ — Κεφ. 4"
+  },
+  {
+    "id": "B01",
+    "issue": "B",
+    "topic": "Stationarity",
+    "difficulty": "easy",
+    "question": "Ποια είναι η H₀ του ADF test;",
+    "choices": [
+      "Η σειρά είναι στάσιμη",
+      "Υπάρχει unit root / μη στασιμότητα",
+      "Δεν υπάρχει autocorrelation",
+      "Υπάρχει cointegration"
+    ],
+    "correct": 1,
+    "explanation": "Στο ADF η μηδενική υπόθεση είναι unit root.",
+    "source": "Τεύχος Β΄ — Κεφ. 5"
+  },
+  {
+    "id": "B02",
+    "issue": "B",
+    "topic": "Stationarity",
+    "difficulty": "easy",
+    "question": "Ποια είναι η H₀ του KPSS test;",
+    "choices": [
+      "Η σειρά είναι στάσιμη γύρω από επίπεδο/τάση ανά προδιαγραφή",
+      "Υπάρχει unit root",
+      "Υπάρχει heteroskedasticity",
+      "Δεν υπάρχει seasonality"
+    ],
+    "correct": 0,
+    "explanation": "Το KPSS αντιστρέφει τη λογική του ADF: H₀ είναι stationarity.",
+    "source": "Τεύχος Β΄ — Κεφ. 5"
+  },
+  {
+    "id": "B03",
+    "issue": "B",
+    "topic": "Stationarity",
+    "difficulty": "medium",
+    "question": "ADF p=0,32 και KPSS p=0,08. Ποια στάση είναι καταλληλότερη;",
+    "choices": [
+      "Μηχανικό differencing",
+      "Μηχανική απόφαση ότι είναι stationary",
+      "Ασαφής περίπτωση: γραφήματα/ACF, PP ή break tests και sensitivity analysis",
+      "Άμεσο VECM"
+    ],
+    "correct": 2,
+    "explanation": "Όταν και τα δύο δεν απορρίπτουν, η πληροφορία είναι ανεπαρκής και χρειάζεται συμπληρωματική διερεύνηση.",
+    "source": "Τεύχος Β΄ — ADF×KPSS"
+  },
+  {
+    "id": "B04",
+    "issue": "B",
+    "topic": "Stationarity",
+    "difficulty": "hard",
+    "question": "ADF και KPSS απορρίπτουν και τα δύο. Τι υποψιάζεσαι πρώτα;",
+    "choices": [
+      "Τέλεια προδιαγραφή",
+      "Structural break / λάθος deterministic specification / μεταβαλλόμενη διακύμανση",
+      "Πάντα I(2)",
+      "Απουσία τάσης"
+    ],
+    "correct": 1,
+    "explanation": "Η λογικά αντιφατική απόρριψη και των δύο είναι ένδειξη ότι η προδιαγραφή θέλει επανεξέταση.",
+    "source": "Τεύχος Β΄ — ADF×KPSS"
+  },
+  {
+    "id": "B05",
+    "issue": "B",
+    "topic": "Transformations",
+    "difficulty": "medium",
+    "question": "Γιατί το differencing δεν πρέπει να γίνεται μηχανικά;",
+    "choices": [
+      "Επειδή δεν επηρεάζει ποτέ την ερμηνεία",
+      "Μπορεί να καταστρέψει μακροχρόνια πληροφορία και να αλλάξει το ερώτημα από επίπεδο σε μεταβολή",
+      "Επειδή αυξάνει πάντα το R²",
+      "Επειδή απαγορεύεται σε οικονομικά δεδομένα"
+    ],
+    "correct": 1,
+    "explanation": "Differencing μπορεί να πετάξει cointegration information και αλλάζει το υπό ερώτημα μέγεθος.",
+    "source": "Τεύχος Β΄ — Κεφ. 6"
+  },
+  {
+    "id": "B06",
+    "issue": "B",
+    "topic": "ACF/PACF",
+    "difficulty": "medium",
+    "question": "Ποια είναι η σωστή χρήση ACF/PACF;",
+    "choices": [
+      "Τελική απόφαση χωρίς validation",
+      "Αρχική παραγωγή 2–5 υποψηφίων, μετά AICc, diagnostics και out-of-sample backtest",
+      "Μόνο για cross-sectional δεδομένα",
+      "Μόνο αφού επιλεγεί το τελικό μοντέλο"
+    ],
+    "correct": 1,
+    "explanation": "ACF/PACF είναι πρώτο βήμα ταυτοποίησης, όχι τελικό κριτήριο.",
+    "source": "Τεύχος Β΄ — Κεφ. 7"
+  },
+  {
+    "id": "B07",
+    "issue": "B",
+    "topic": "Diagnostics",
+    "difficulty": "medium",
+    "question": "Στο Ljung–Box, p<0,05 στα κατάλοιπα σημαίνει:",
+    "choices": [
+      "Τα κατάλοιπα είναι συμβατά με λευκό θόρυβο",
+      "Υπάρχει εναπομείνασα autocorrelation και χρειάζεται αναθεώρηση μοντέλου",
+      "Το μοντέλο είναι υποχρεωτικά καλύτερο από baseline",
+      "Η σειρά είναι I(0)"
+    ],
+    "correct": 1,
+    "explanation": "H₀ του Ljung–Box: οι πρώτες h autocorrelations είναι από κοινού μηδέν. Μικρό p δημιουργεί πρόβλημα.",
+    "source": "Τεύχος Β΄ — Κεφ. 7.4"
+  },
+  {
+    "id": "B08",
+    "issue": "B",
+    "topic": "ARIMA/SARIMA",
+    "difficulty": "easy",
+    "question": "Στο ARIMA(p,d,q), το d δηλώνει:",
+    "choices": [
+      "Αριθμό AR όρων",
+      "Αριθμό διαφορών για stationarity",
+      "Αριθμό MA όρων",
+      "Εποχική περίοδο"
+    ],
+    "correct": 1,
+    "explanation": "d είναι ο βαθμός differencing.",
+    "source": "Τεύχος Β΄ — ARIMA"
+  },
+  {
+    "id": "B09",
+    "issue": "B",
+    "topic": "ARIMA/SARIMA",
+    "difficulty": "medium",
+    "question": "Ποιο μοτίβο ταυτοποίησης είναι τυπικό για MA(q);",
+    "choices": [
+      "PACF cutoff μετά το p",
+      "ACF cutoff μετά το q",
+      "ACF γραμμικά αυξανόμενο",
+      "Καμία σχέση με ACF"
+    ],
+    "correct": 1,
+    "explanation": "Για MA(q), η ACF τείνει να μηδενίζεται μετά το q, ενώ η PACF φθίνει.",
+    "source": "Τεύχος Β΄ — MA(q)"
+  },
+  {
+    "id": "B10",
+    "issue": "B",
+    "topic": "Model selection",
+    "difficulty": "hard",
+    "question": "Το SARIMA με χαμηλότερο AICc χάνει από seasonal naive στο rolling-origin backtest. Τι επιλέγεις;",
+    "choices": [
+      "Το SARIMA επειδή έχει χαμηλότερο AICc",
+      "Το seasonal naive ή τουλάχιστον απορρίπτεις την αυτόματη επιλογή του SARIMA",
+      "Και τα δύο είναι ισοδύναμα",
+      "Αυτόματα LSTM"
+    ],
+    "correct": 1,
+    "explanation": "Η out-of-sample επίδοση έναντι benchmark υπερισχύει του in-sample information criterion για forecasting.",
+    "source": "Τεύχος Β΄ — Κριτική σκέψη"
+  },
+  {
+    "id": "B11",
+    "issue": "B",
+    "topic": "SARIMAX",
+    "difficulty": "hard",
+    "question": "Ποιος είναι βασικός κίνδυνος όταν χρησιμοποιείς μελλοντικό X σε SARIMAX;",
+    "choices": [
+      "Το X είναι πάντα γνωστό",
+      "Το X μπορεί να χρειάζεται δική του πρόβλεψη και η αβεβαιότητά της να μην ενσωματώνεται",
+      "Το SARIMAX δεν δέχεται exogenous variables",
+      "Δεν μπορούν να υπάρχουν lags"
+    ],
+    "correct": 1,
+    "explanation": "Αν οι μελλοντικές τιμές X είναι άγνωστες, πρέπει να προβλεφθούν ή να δοθούν σενάρια.",
+    "source": "Τεύχος Β΄ — SARIMAX"
+  },
+  {
+    "id": "B12",
+    "issue": "B",
+    "topic": "ADF specification",
+    "difficulty": "hard",
+    "question": "Σε σειρά με ορατή deterministic trend, ποια ADF προδιαγραφή είναι συνήθως πιο κατάλληλη;",
+    "choices": [
+      "none",
+      "c μόνο",
+      "ct (constant + trend)",
+      "Οποιαδήποτε, δεν επηρεάζει"
+    ],
+    "correct": 2,
+    "explanation": "Η παράλειψη trend μπορεί να κάνει trend-stationary σειρά να φαίνεται unit-root.",
+    "source": "Τεύχος Β΄ — ADF"
+  },
+  {
+    "id": "C01",
+    "issue": "C",
+    "topic": "Multivariate",
+    "difficulty": "medium",
+    "question": "Τι πρέπει να γίνει πριν ερμηνεύσεις CCF δύο σειρών με κοινή τάση/εποχικότητα;",
+    "choices": [
+      "Prewhitening / κατάλληλο φιλτράρισμα",
+      "Απλό correlation στα levels",
+      "Random 80/20 split",
+      "Διαγραφή της εποχικότητας μόνο από το Y"
+    ],
+    "correct": 0,
+    "explanation": "Raw CCF σε trending/seasonal σειρές μπορεί να είναι παραπλανητικό.",
+    "source": "Τεύχος Γ΄ — Κεφ. 9"
+  },
+  {
+    "id": "C02",
+    "issue": "C",
+    "topic": "Cointegration",
+    "difficulty": "medium",
+    "question": "Τι είναι το VECM;",
+    "choices": [
+      "VAR σε διαφορές χωρίς άλλη πληροφορία",
+      "VAR σε διαφορές με error-correction term που διατηρεί τη μακροχρόνια σχέση",
+      "Μοντέλο μόνο για counts",
+      "Μέθοδος decomposition"
+    ],
+    "correct": 1,
+    "explanation": "Το VECM συνδυάζει βραχυχρόνια δυναμική διαφορών με error correction από cointegration.",
+    "source": "Τεύχος Γ΄ — Κεφ. 10.4"
+  },
+  {
+    "id": "C03",
+    "issue": "C",
+    "topic": "Cointegration",
+    "difficulty": "hard",
+    "question": "Έχεις μείγμα I(0) και I(1) μεταβλητών, καμία I(2). Ποια προσέγγιση είναι συχνά κατάλληλη;",
+    "choices": [
+      "ARDL bounds framework",
+      "Johansen υποχρεωτικά σε όλες",
+      "Απλό OLS χωρίς ελέγχους",
+      "GARCH"
+    ],
+    "correct": 0,
+    "explanation": "Το ARDL είναι σχεδιασμένο να χειρίζεται μείγμα I(0)/I(1), όχι I(2).",
+    "source": "Τεύχος Γ΄/Δ΄ — ARDL"
+  },
+  {
+    "id": "C04",
+    "issue": "C",
+    "topic": "Causality",
+    "difficulty": "easy",
+    "question": "Granger causality σημαίνει κυρίως:",
+    "choices": [
+      "Απόδειξη μηχανιστικής αιτιότητας",
+      "Βελτίωση προβλεψιμότητας από παρελθούσες τιμές του X",
+      "Τυχαιοποιημένη παρέμβαση",
+      "Απουσία confounding"
+    ],
+    "correct": 1,
+    "explanation": "Granger αφορά predictive precedence, όχι από μόνο του causal mechanism.",
+    "source": "Τεύχος Γ΄ — Granger causality"
+  },
+  {
+    "id": "C05",
+    "issue": "C",
+    "topic": "ITS",
+    "difficulty": "easy",
+    "question": "Στο segmented ITS, ο β₂ αντιπροσωπεύει συνήθως:",
+    "choices": [
+      "Baseline trend",
+      "Immediate level change",
+      "Slope change",
+      "Seasonal amplitude"
+    ],
+    "correct": 1,
+    "explanation": "β₂ είναι το άμεσο άλμα επιπέδου στη χρονική στιγμή παρέμβασης.",
+    "source": "Τεύχος Γ΄ — ITS"
+  },
+  {
+    "id": "C06",
+    "issue": "C",
+    "topic": "ITS",
+    "difficulty": "medium",
+    "question": "Στο ITS, η νέα κλίση μετά την παρέμβαση είναι:",
+    "choices": [
+      "β₃",
+      "β₁ + β₃",
+      "β₂ + β₃",
+      "β₀ + β₂"
+    ],
+    "correct": 1,
+    "explanation": "β₃ είναι η αλλαγή κλίσης, όχι η ίδια η νέα κλίση.",
+    "source": "Τεύχος Γ΄ — ITS"
+  },
+  {
+    "id": "C07",
+    "issue": "C",
+    "topic": "ITS",
+    "difficulty": "hard",
+    "question": "Πολιτική εφαρμόζεται Μάρτιο 2020 και το ITS δείχνει μεγάλη επίδραση. Ποια είναι η προφανής απειλή;",
+    "choices": [
+      "Cointegration",
+      "Confounding με το COVID-19 shock",
+      "Over-differencing μόνο",
+      "Seasonal naive"
+    ],
+    "correct": 1,
+    "explanation": "Η χρονική σύμπτωση με πανδημικό shock καθιστά την επίδραση μη ταυτοποιήσιμη χωρίς ισχυρότερο design/control.",
+    "source": "Τεύχος Γ΄ — ITS validity"
+  },
+  {
+    "id": "C08",
+    "issue": "C",
+    "topic": "ITS",
+    "difficulty": "hard",
+    "question": "Τι σημαίνει αν placebo ITS σε ψευδή ημερομηνία βγάλει επίσης σημαντική επίδραση;",
+    "choices": [
+      "Ενισχύει το κύριο causal claim",
+      "Το μοντέλο πιθανόν ανιχνεύει θόρυβο/μη γραμμικότητα και υπονομεύει το κύριο εύρημα",
+      "Αποδεικνύει stationarity",
+      "Δεν έχει σημασία"
+    ],
+    "correct": 1,
+    "explanation": "Placebo test λειτουργεί ως έλεγχος ευρωστίας. Significant placebo είναι προειδοποίηση.",
+    "source": "Τεύχος Γ΄ — ITS robustness"
+  },
+  {
+    "id": "C09",
+    "issue": "C",
+    "topic": "Structural breaks",
+    "difficulty": "medium",
+    "question": "Unit-root test δεν απορρίπτει, αλλά το γράφημα δείχνει σταθερότητα γύρω από διαφορετικά επίπεδα πριν/μετά από άλμα. Τι εξετάζεις;",
+    "choices": [
+      "Structural break tests, π.χ. Zivot–Andrews/Bai–Perron ανά περίπτωση",
+      "Μόνο log transform",
+      "Αυτόματα d=2",
+      "Μόνο Ljung–Box"
+    ],
+    "correct": 0,
+    "explanation": "Ένα break μπορεί να μιμηθεί unit root και να οδηγήσει σε λάθος differencing.",
+    "source": "Τεύχος Γ΄ — Structural breaks"
+  },
+  {
+    "id": "C10",
+    "issue": "C",
+    "topic": "GARCH",
+    "difficulty": "medium",
+    "question": "Ποια είναι η H₀ του ARCH-LM;",
+    "choices": [
+      "Υπάρχουν ARCH effects",
+      "Δεν υπάρχουν ARCH effects / conditional homoskedasticity",
+      "Η σειρά είναι I(1)",
+      "Υπάρχει cointegration"
+    ],
+    "correct": 1,
+    "explanation": "ARCH-LM ελέγχει αν τα τετραγωνισμένα κατάλοιπα έχουν lagged structure.",
+    "source": "Τεύχος Γ΄ — Κεφ. 14"
+  },
+  {
+    "id": "C11",
+    "issue": "C",
+    "topic": "GARCH",
+    "difficulty": "hard",
+    "question": "Πότε πρέπει να εφαρμόζεται ARCH-LM;",
+    "choices": [
+      "Σε raw series πριν από κάθε μοντέλο",
+      "Στα κατάλοιπα ενός ήδη επαρκώς προδιαγεγραμμένου mean model",
+      "Μόνο σε cross-sectional residuals",
+      "Μόνο αν ADF p<0,05"
+    ],
+    "correct": 1,
+    "explanation": "Αν το mean model είναι λάθος, το ARCH-LM μπορεί να δώσει ψευδώς θετικό αποτέλεσμα.",
+    "source": "Τεύχος Γ΄ — Κεφ. 14"
+  },
+  {
+    "id": "C12",
+    "issue": "C",
+    "topic": "ITS",
+    "difficulty": "expert",
+    "question": "Για controlled ITS, ποιο είναι το βασικό πρόσθετο πλεονέκτημα έναντι απλού ITS;",
+    "choices": [
+      "Καταργεί κάθε πιθανό confounding",
+      "Ελέγχει κοινούς χρονικούς παράγοντες που επηρεάζουν και intervention και control σειρά",
+      "Δεν χρειάζεται pre-trend assessment",
+      "Δεν χρειάζεται residual diagnostics"
+    ],
+    "correct": 1,
+    "explanation": "Controlled ITS αφαιρεί κοινά shocks, αλλά δεν εξαφανίζει όλες τις assumptions.",
+    "source": "Τεύχος Γ΄ — ITS"
+  },
+  {
+    "id": "D01",
+    "issue": "D",
+    "topic": "Intermittent demand",
+    "difficulty": "medium",
+    "question": "ADI=2,8 και CV²=0,9 αντιστοιχεί τυπικά σε ποια κατηγορία;",
+    "choices": [
+      "Smooth",
+      "Erratic",
+      "Intermittent",
+      "Lumpy"
+    ],
+    "correct": 3,
+    "explanation": "Με ADI≥1,32 και CV²>0,49 η κατηγορία είναι Lumpy.",
+    "source": "Τεύχος Δ΄/Ε΄ — Intermittent demand"
+  },
+  {
+    "id": "D02",
+    "issue": "D",
+    "topic": "Intermittent demand",
+    "difficulty": "hard",
+    "question": "Γιατί η κλασική Croston είναι μεροληπτική;",
+    "choices": [
+      "Επειδή δεν χρησιμοποιεί μέσο",
+      "Επειδή προβλέπει λόγο δύο εκτιμητών και τείνει σε upward bias· η SBA εφαρμόζει διόρθωση",
+      "Επειδή έχει υποχρεωτικά negative forecasts",
+      "Επειδή είναι νευρωνικό δίκτυο"
+    ],
+    "correct": 1,
+    "explanation": "Η SBA χρησιμοποιεί περίπου τον παράγοντα (1−α/2) για να μειώσει την upward bias.",
+    "source": "Τεύχος Ε΄ — Απαντήσεις Τεύχους Δ΄"
+  },
+  {
+    "id": "D03",
+    "issue": "D",
+    "topic": "Multiple seasonality",
+    "difficulty": "medium",
+    "question": "Ημερήσια σειρά έχει εβδομαδιαία και ετήσια εποχικότητα. Ποια επιλογή είναι λογική;",
+    "choices": [
+      "SARIMA με μία μόνο περίοδο χωρίς άλλη προσαρμογή",
+      "Dynamic harmonic regression ή TBATS/MSTL",
+      "Croston υποχρεωτικά",
+      "VECM πάντα"
+    ],
+    "correct": 1,
+    "explanation": "Πολλαπλές εποχικότητες συχνά απαιτούν Fourier/dynamic harmonic regression, TBATS ή MSTL.",
+    "source": "Τεύχος Δ΄ — Multiple seasonality"
+  },
+  {
+    "id": "D04",
+    "issue": "D",
+    "topic": "Counts",
+    "difficulty": "hard",
+    "question": "Πότε δικαιολογείται zero-inflated count model;",
+    "choices": [
+      "Όποτε υπάρχουν λίγα μηδενικά",
+      "Όταν υπάρχουν θεωρητικά δύο διεργασίες: structural zeros και count-generating process",
+      "Πάντα αντί Negative Binomial",
+      "Μόνο όταν ο μέσος είναι >100"
+    ],
+    "correct": 1,
+    "explanation": "Zero-inflated απαιτεί ουσιαστικό μηχανισμό structural zeros, όχι απλώς χαμηλό count rate.",
+    "source": "Τεύχος Δ΄/Ε΄ — Count models"
+  },
+  {
+    "id": "D05",
+    "issue": "D",
+    "topic": "ML leakage",
+    "difficulty": "medium",
+    "question": "Τι είναι λάθος στο feature y.rolling(3).mean() για forecasting;",
+    "choices": [
+      "Δεν έχει scale",
+      "Περιλαμβάνει την τρέχουσα y και προκαλεί target leakage",
+      "Δεν μπορεί να υπολογιστεί",
+      "Χρησιμοποιεί πολύ λίγα lags"
+    ],
+    "correct": 1,
+    "explanation": "Η σωστή λογική είναι π.χ. y.shift(1).rolling(3).mean().",
+    "source": "Τεύχος Δ΄ — Feature engineering"
+  },
+  {
+    "id": "D06",
+    "issue": "D",
+    "topic": "ML forecasting",
+    "difficulty": "hard",
+    "question": "Γιατί ένα tree model όπως LightGBM μπορεί να “επιπεδώνεται” σε ανοδική σειρά;",
+    "choices": [
+      "Τα δέντρα κάνουν φυσικά γραμμική extrapolation",
+      "Τα δέντρα τείνουν σε piecewise-constant predictions και δεν extrapolate πέρα από το train range",
+      "Το LightGBM απαιτεί stationarity",
+      "Επειδή το MASE είναι πάντα 1"
+    ],
+    "correct": 1,
+    "explanation": "Λύσεις: μοντελοποίηση διαφορών/λόγων ή hybrid trend model + ML residuals.",
+    "source": "Τεύχος Δ΄/Ε΄ — ML"
+  },
+  {
+    "id": "D07",
+    "issue": "D",
+    "topic": "Validation",
+    "difficulty": "easy",
+    "question": "Ποια validation στρατηγική είναι σωστή για forecasting;",
+    "choices": [
+      "Random shuffled K-fold",
+      "Rolling-origin / walk-forward / expanding window",
+      "Τυχαίο 80/20 split",
+      "Bootstrap που ανακατεύει τον χρόνο"
+    ],
+    "correct": 1,
+    "explanation": "Η χρονική τάξη πρέπει να διατηρείται.",
+    "source": "Τεύχος Δ΄ — Validation"
+  },
+  {
+    "id": "D08",
+    "issue": "D",
+    "topic": "Validation",
+    "difficulty": "hard",
+    "question": "Γιατί ένας random 80/20 split μπορεί να δώσει R²=0,98 και να είναι παραπλανητικός;",
+    "choices": [
+      "Επειδή το test περιέχει χρονικά γειτονικά σημεία που ουσιαστικά επιτρέπουν interpolation αντί πραγματικής extrapolation",
+      "Επειδή το R² δεν μπορεί να είναι >0,9",
+      "Επειδή χρησιμοποιεί πολύ μικρό train",
+      "Επειδή δεν υπάρχει autocorrelation"
+    ],
+    "correct": 0,
+    "explanation": "Στις χρονοσειρές το πραγματικό deployment είναι πρόβλεψη άγνωστου μέλλοντος.",
+    "source": "Τεύχος Δ΄/Ε΄ — Validation"
+  },
+  {
+    "id": "D09",
+    "issue": "D",
+    "topic": "Metrics",
+    "difficulty": "medium",
+    "question": "Τι σημαίνει MASE=0,82;",
+    "choices": [
+      "Το μοντέλο είναι 82% χειρότερο από naive",
+      "Το μοντέλο έχει περίπου 18% μικρότερο scaled absolute error από το naive benchmark",
+      "Το μοντέλο είναι άχρηστο",
+      "Το MAPE είναι 82%"
+    ],
+    "correct": 1,
+    "explanation": "MASE<1 σημαίνει καλύτερη επίδοση από το scaling naive benchmark.",
+    "source": "Τεύχος Δ΄/Ε΄ — Metrics"
+  },
+  {
+    "id": "D10",
+    "issue": "D",
+    "topic": "Metrics",
+    "difficulty": "hard",
+    "question": "Γιατί το MAPE μπορεί να είναι προβληματικό σε inventory/intermittent demand;",
+    "choices": [
+      "Δεν έχει καμία ασυμμετρία",
+      "Δεν ορίζεται με μηδενικά και μπορεί να επιβραβεύει συστηματική υποεκτίμηση",
+      "Είναι πάντα καλύτερο από MASE",
+      "Χρειάζεται unit root"
+    ],
+    "correct": 1,
+    "explanation": "Μηδενικά και ασυμμετρία κάνουν το MAPE ακατάλληλο σε πολλές πρακτικές σειρές.",
+    "source": "Τεύχος Δ΄/Ε΄ — Metrics"
+  },
+  {
+    "id": "D11",
+    "issue": "D",
+    "topic": "Deep Learning",
+    "difficulty": "medium",
+    "question": "3 σειρές × 90 μηνιαία σημεία: ποια αρχική στάση απέναντι σε LSTM είναι πιο συνετή;",
+    "choices": [
+      "LSTM ως υποχρεωτικό πρώτο baseline",
+      "Προτίμηση σε απλούστερα ETS/SARIMA/VAR/ARDL ανά δομή και baseline λόγω μικρού δείγματος",
+      "Transformer χωρίς validation",
+      "Random forest με shuffled split"
+    ],
+    "correct": 1,
+    "explanation": "Με τόσο μικρό δείγμα, DL έχει υψηλό κίνδυνο overfitting.",
+    "source": "Τεύχος Δ΄/Ε΄ — DL"
+  },
+  {
+    "id": "D12",
+    "issue": "D",
+    "topic": "Forecast strategy",
+    "difficulty": "hard",
+    "question": "Πότε προτιμάται direct multi-step forecasting έναντι recursive;",
+    "choices": [
+      "Όταν δεν υπάρχει καθόλου ορίζοντας",
+      "Όταν ο ορίζοντας είναι μεγάλος/συγκεκριμένος και θέλεις να περιορίσεις συσσώρευση recursive error, εφόσον έχεις δεδομένα",
+      "Πάντα",
+      "Μόνο για GARCH"
+    ],
+    "correct": 1,
+    "explanation": "Direct εκπαιδεύει ξεχωριστό στόχο ανά horizon και ανταλλάσσει περισσότερη πολυπλοκότητα με λιγότερη error propagation.",
+    "source": "Τεύχος Δ΄ — Forecast strategies"
+  },
+  {
+    "id": "E01",
+    "issue": "E",
+    "topic": "Diagnostics",
+    "difficulty": "easy",
+    "question": "AICc επιλέγει μοντέλο Χ αλλά Ljung–Box στα κατάλοιπα έχει p=0,001. Τι κάνεις;",
+    "choices": [
+      "Το κρατάς επειδή έχει καλύτερο AICc",
+      "Το απορρίπτεις/αναθεωρείς επειδή residual diagnostics αποτυγχάνουν",
+      "Αγνοείς τα κατάλοιπα",
+      "Αλλάζεις μόνο τη γραμματοσειρά του report"
+    ],
+    "correct": 1,
+    "explanation": "Residual adequacy είναι προϋπόθεση εγκυρότητας, όχι προαιρετικό criterion.",
+    "source": "Τεύχος Ε΄ — Diagnostics"
+  },
+  {
+    "id": "E02",
+    "issue": "E",
+    "topic": "Diagnostics",
+    "difficulty": "medium",
+    "question": "Jarque–Bera p=0,002 αλλά Ljung–Box p=0,45. Ποιο συμπέρασμα είναι πιο ακριβές;",
+    "choices": [
+      "Το μοντέλο είναι πάντα άχρηστο",
+      "Η απουσία residual autocorrelation είναι καλή· μη κανονικότητα επηρεάζει κυρίως parametric intervals και μπορεί να αντιμετωπιστεί με bootstrap/empirical intervals",
+      "Πρέπει να γίνει d=2",
+      "Αποδεικνύεται cointegration"
+    ],
+    "correct": 1,
+    "explanation": "Normality δεν είναι η κρισιμότερη προϋπόθεση για point forecasts, αλλά επηρεάζει interval calibration.",
+    "source": "Τεύχος ΣΤ΄ — Απαντήσεις Τεύχους Ε΄"
+  },
+  {
+    "id": "E03",
+    "issue": "E",
+    "topic": "Uncertainty",
+    "difficulty": "hard",
+    "question": "Γιατί nominal 95% prediction intervals μπορεί να έχουν πραγματική κάλυψη πολύ χαμηλότερη;",
+    "choices": [
+      "Επειδή λαμβάνουν πάντα υπόψη model uncertainty",
+      "Επειδή συχνά αγνοούν parameter uncertainty, model-selection uncertainty, structural change και uncertainty στα X",
+      "Επειδή το 95% σημαίνει 50%",
+      "Μόνο λόγω rounding"
+    ],
+    "correct": 1,
+    "explanation": "Τα κλασικά intervals συχνά προϋποθέτουν σωστό μοντέλο και σταθερή δομή.",
+    "source": "Τεύχος ΣΤ΄ — Uncertainty"
+  },
+  {
+    "id": "E04",
+    "issue": "E",
+    "topic": "Decision Tree",
+    "difficulty": "medium",
+    "question": "Σαφής παρέμβαση, μία σειρά, ≥12 σημεία πριν/μετά και υπάρχει control series. Τι προτείνει το decision tree;",
+    "choices": [
+      "Controlled ITS",
+      "Random forest",
+      "Croston",
+      "Johansen πάντα"
+    ],
+    "correct": 0,
+    "explanation": "Για causal policy evaluation με control series, controlled ITS είναι η φυσική επιλογή.",
+    "source": "Τεύχος Ε΄ — Decision Tree"
+  },
+  {
+    "id": "E05",
+    "issue": "E",
+    "topic": "Decision Tree",
+    "difficulty": "medium",
+    "question": "Πολλά μηδενικά με ADI≥1,32 σε forecasting. Ποια κατεύθυνση προτείνει το decision tree;",
+    "choices": [
+      "Croston / SBA / TSB",
+      "VECM",
+      "OLS in levels",
+      "Jarque–Bera"
+    ],
+    "correct": 0,
+    "explanation": "Η intermittent demand τμηματοποιείται πριν την επιλογή μοντέλου.",
+    "source": "Τεύχος Ε΄ — Decision Tree"
+  },
+  {
+    "id": "E06",
+    "issue": "E",
+    "topic": "Model governance",
+    "difficulty": "hard",
+    "question": "Τι πρέπει να περιλαμβάνει monitoring ενός deployed forecasting model;",
+    "choices": [
+      "Καμία επανεκτίμηση",
+      "Thresholds σφάλματος, drift checks, περιοδική επανεκτίμηση και ημερομηνία λήξης/επανελέγχου",
+      "Μόνο AIC μία φορά",
+      "Μόνο p-values"
+    ],
+    "correct": 1,
+    "explanation": "Χωρίς monitoring, degradation μπορεί να περνά απαρατήρητη.",
+    "source": "Τεύχος Ε΄ — Model governance"
+  },
+  {
+    "id": "E07",
+    "issue": "E",
+    "topic": "Practical significance",
+    "difficulty": "medium",
+    "question": "Σε policy evaluation, τι πρέπει να αναφέρεται πέρα από p-values;",
+    "choices": [
+      "Μόνο το sign",
+      "Magnitude σε ερμηνεύσιμες μονάδες και διαφορά από counterfactual σε χρήσιμους ορίζοντες",
+      "Μόνο AIC",
+      "Μόνο sample size"
+    ],
+    "correct": 1,
+    "explanation": "Το πρόγραμμα δίνει έμφαση σε απόλυτη/σχετική πρακτική επίδραση, όχι μόνο statistical significance.",
+    "source": "Τεύχος Γ΄/Ε΄ — ITS reporting"
+  },
+  {
+    "id": "E08",
+    "issue": "E",
+    "topic": "End-to-end workflow",
+    "difficulty": "hard",
+    "question": "Ποια σειρά είναι πιο ορθή;",
+    "choices": [
+      "Model → clean data → define target",
+      "Define purpose/target → data audit → plots/decomposition → stationarity/model candidates → diagnostics → time-aware backtest → uncertainty/reporting",
+      "Random split → AIC → τέλος",
+      "ADF → causal claim"
+    ],
+    "correct": 1,
+    "explanation": "Το master workflow βάζει πρώτα σκοπό/δεδομένα και κλείνει με validation, uncertainty και reporting.",
+    "source": "Τεύχος Ε΄ — Master Checklist"
+  },
+  {
+    "id": "ST01",
+    "issue": "ST",
+    "topic": "Mastery",
+    "difficulty": "easy",
+    "question": "Ποιο είναι το βασικό μήνυμα της τελικής ύλης για Granger;",
+    "choices": [
+      "Granger = causal mechanism",
+      "Granger = predictability, όχι από μόνο του causality",
+      "Granger = decomposition",
+      "Granger = service level"
+    ],
+    "correct": 1,
+    "explanation": "Η τελική παρουσίαση ξεχωρίζει association, prediction και causality.",
+    "source": "Τεύχος ΣΤ΄ — Presentation Mode"
+  },
+  {
+    "id": "ST02",
+    "issue": "ST",
+    "topic": "Mastery",
+    "difficulty": "medium",
+    "question": "Στην τελική ύλη, γιατί “αγνοημένη δομική θραύση = άκυρο μοντέλο”;",
+    "choices": [
+      "Επειδή κάθε break απαιτεί πάντα διαγραφή όλου του δείγματος",
+      "Επειδή μπορεί να αλλοιώσει stationarity, parameters, residuals και causal/forecast conclusions",
+      "Επειδή αυξάνει μόνο το font size",
+      "Επειδή αποδεικνύει I(2)"
+    ],
+    "correct": 1,
+    "explanation": "Structural breaks αλλάζουν το data-generating process και απαιτούν ρητή αντιμετώπιση.",
+    "source": "Τεύχος ΣΤ΄ — Structural breaks"
+  },
+  {
+    "id": "ST03",
+    "issue": "ST",
+    "topic": "Mastery",
+    "difficulty": "hard",
+    "question": "Ποια φράση συνοψίζει καλύτερα τη φιλοσοφία επιλογής μοντέλου του προγράμματος;",
+    "choices": [
+      "Το πιο πολύπλοκο μοντέλο κερδίζει",
+      "Το χαμηλότερο AIC κερδίζει πάντα",
+      "Έγκυρα diagnostics + time-aware out-of-sample performance έναντι benchmark + κατάλληλο μοντέλο για τον σκοπό",
+      "Το μεγαλύτερο R² αρκεί"
+    ],
+    "correct": 2,
+    "explanation": "Η επιλογή μοντέλου είναι συνδυασμός καταλληλότητας, diagnostics, benchmark και πραγματικής out-of-sample επίδοσης.",
+    "source": "Τεύχη Α΄–ΣΤ΄"
+  },
+  {
+    "id": "ST04",
+    "issue": "ST",
+    "topic": "Mastery",
+    "difficulty": "expert",
+    "question": "Ποια διάκριση είναι θεμελιώδης πριν επιλέξεις μέθοδο;",
+    "choices": [
+      "Forecasting vs causal evaluation",
+      "CSV vs XLSX",
+      "Dark vs light theme",
+      "Mean vs median μόνο"
+    ],
+    "correct": 0,
+    "explanation": "Ο σκοπός καθορίζει το design: forecasting και causal evaluation έχουν διαφορετικές απαιτήσεις και κριτήρια.",
+    "source": "Τεύχος Ε΄/ΣΤ΄ — Decision Tree"
+  }
+]
