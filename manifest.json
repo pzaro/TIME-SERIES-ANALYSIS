@@ -1,0 +1,54 @@
+{
+  "title": "Time Series Mastery Lab",
+  "version": "1.0.0",
+  "documents": [
+    {
+      "id": "A",
+      "title": "Τεύχος Α΄",
+      "subtitle": "Θεμέλια · Εφαρμογές · Data Audit · Decomposition",
+      "file": "pdf/TEYXOS_A.pdf",
+      "parts": "1–4",
+      "level": "Beginner → Intermediate"
+    },
+    {
+      "id": "B",
+      "title": "Τεύχος Β΄",
+      "subtitle": "Stationarity · Transformations · ACF/PACF · Forecasting",
+      "file": "pdf/TEYXOS_B.pdf",
+      "parts": "5–8",
+      "level": "Intermediate"
+    },
+    {
+      "id": "C",
+      "title": "Τεύχος Γ΄",
+      "subtitle": "VAR/ARDL/VECM · Cointegration · ITS · Breaks · GARCH",
+      "file": "pdf/TEYXOS_C.pdf",
+      "parts": "9–14",
+      "level": "Advanced"
+    },
+    {
+      "id": "D",
+      "title": "Τεύχος Δ΄",
+      "subtitle": "Special Series · ML/DL · Validation · Metrics",
+      "file": "pdf/TEYXOS_D.pdf",
+      "parts": "15–20",
+      "level": "Advanced"
+    },
+    {
+      "id": "E",
+      "title": "Τεύχος Ε΄",
+      "subtitle": "Diagnostics · Uncertainty · Decision Tree · Case Studies",
+      "file": "pdf/TEYXOS_E.pdf",
+      "parts": "21–26",
+      "level": "Expert / Applied"
+    },
+    {
+      "id": "ST",
+      "title": "Τεύχος ΣΤ΄",
+      "subtitle": "Presentation Mode · Exam Mode · Cheat Sheet",
+      "file": "pdf/TEYXOS_ST.pdf",
+      "parts": "27–29",
+      "level": "Mastery"
+    }
+  ]
+}

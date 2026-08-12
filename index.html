@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Time Series Mastery Lab — προσωπική πλατφόρμα μελέτης, PDF library, adaptive multiple choice, spaced repetition και exam mode." />
+  <title>Time Series Mastery Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">TS</div>
+        <div><strong>Mastery Lab</strong><span>Zero → Hero</span></div>
+      </div>
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <button class="nav-btn active" data-view="dashboard"><span>⌂</span> Αρχική</button>
+        <button class="nav-btn" data-view="library"><span>▤</span> Βιβλιοθήκη</button>
+        <button class="nav-btn" data-view="quiz"><span>◎</span> Quiz Lab</button>
+        <button class="nav-btn" data-view="review"><span>↻</span> Επανάληψη</button>
+        <button class="nav-btn" data-view="exam"><span>◫</span> Exam Mode</button>
+        <button class="nav-btn" data-view="progress"><span>▥</span> Πρόοδος</button>
+        <button class="nav-btn" data-view="settings"><span>⚙</span> GitHub / Ρυθμίσεις</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="tiny">Τοπική πρόοδος</div>
+        <div class="storage-status"><span class="dot"></span> localStorage ενεργό</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="menuBtn" aria-label="Μενού">☰</button>
+        <div>
+          <h1 id="pageTitle">Αρχική</h1>
+          <p id="pageSubtitle">Adaptive learning για τα 6 τεύχη Time Series — Zero to Hero</p>
+        </div>
+        <div class="top-actions">
+          <button class="btn secondary" id="quickReviewBtn">Επανάληψη σήμερα</button>
+          <button class="btn primary" id="quickQuizBtn">Νέο Quiz</button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="hero card">
+          <div>
+            <span class="eyebrow">TIME SERIES — ZERO TO HERO</span>
+            <h2>Διάβασε. Εξετάσου. Επανέλαβε. Κατάκτησέ το.</h2>
+            <p>Τα 6 τεύχη, adaptive multiple choice, weak-point training, spaced repetition και exam mode σε μία προσωπική εφαρμογή.</p>
+            <div class="hero-actions">
+              <button class="btn primary" data-go="quiz">Ξεκίνα προπόνηση</button>
+              <button class="btn secondary" data-go="library">Άνοιξε τα τεύχη</button>
+            </div>
+          </div>
+          <div class="hero-score">
+            <div class="ring" id="masteryRing"><span id="masteryPct">0%</span></div>
+            <strong>Mastery score</strong>
+            <small id="masteryText">Απάντησε ερωτήσεις για να ξεκινήσει η μέτρηση.</small>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat card"><span>Απαντήσεις</span><strong id="statAttempts">0</strong><small>συνολικά</small></article>
+          <article class="stat card"><span>Ακρίβεια</span><strong id="statAccuracy">—</strong><small>σε όλες τις προσπάθειες</small></article>
+          <article class="stat card"><span>Για σήμερα</span><strong id="statDue">0</strong><small>έννοιες προς επανάληψη</small></article>
+          <article class="stat card"><span>Streak</span><strong id="statStreak">0</strong><small>συνεχόμενες σωστές</small></article>
+        </div>
+
+        <div class="two-col">
+          <article class="card pad">
+            <div class="section-head"><div><span class="eyebrow">SMART TRAINING</span><h3>Τι να κάνεις τώρα</h3></div></div>
+            <div id="recommendations" class="recommendations"></div>
+          </article>
+          <article class="card pad">
+            <div class="section-head"><div><span class="eyebrow">WEAK POINTS</span><h3>Χρειάζονται προσοχή</h3></div><button class="text-btn" data-go="progress">Όλα →</button></div>
+            <div id="weakMini" class="weak-mini"></div>
+          </article>
+        </div>
+
+        <article class="card pad">
+          <div class="section-head"><div><span class="eyebrow">CURRICULUM</span><h3>6 τεύχη · 29 μέρη</h3></div><button class="text-btn" data-go="library">Βιβλιοθήκη →</button></div>
+          <div class="issue-strip" id="issueStrip"></div>
+        </article>
+      </section>
+
+      <section class="view" id="view-library">
+        <div class="library-layout">
+          <div class="card pad library-list-panel">
+            <div class="section-head"><div><span class="eyebrow">PDF LIBRARY</span><h3>Τα τεύχη</h3></div><button class="btn mini secondary" id="syncLibraryBtn">↻ GitHub sync</button></div>
+            <div id="libraryList" class="library-list"></div>
+          </div>
+          <div class="card pdf-panel">
+            <div class="pdf-toolbar">
+              <div><strong id="pdfTitle">Επίλεξε τεύχος</strong><small id="pdfMeta">Το PDF θα εμφανιστεί εδώ</small></div>
+              <a class="btn mini secondary disabled" id="openPdfBtn" href="#" target="_blank" rel="noopener">Άνοιγμα σε νέα καρτέλα</a>
+            </div>
+            <div class="pdf-placeholder" id="pdfPlaceholder">
+              <div class="big-icon">▤</div>
+              <h3>Διάλεξε ένα τεύχος από αριστερά</h3>
+              <p>Η εφαρμογή χρησιμοποιεί τον PDF viewer του browser, χωρίς εξωτερική βιβλιοθήκη.</p>
+            </div>
+            <iframe id="pdfFrame" title="PDF viewer" hidden></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-quiz">
+        <div class="quiz-grid">
+          <aside class="card pad setup-panel" id="quizSetupPanel">
+            <span class="eyebrow">QUIZ BUILDER</span>
+            <h3>Στήσε την προπόνηση</h3>
+            <label>Λειτουργία
+              <select id="quizMode">
+                <option value="mixed">Μικτό Quiz</option>
+                <option value="weak">Weak Points</option>
+                <option value="mistakes">Μόνο λάθη</option>
+                <option value="due">Spaced Repetition — due</option>
+                <option value="mastery">Mastery — συνεχές</option>
+              </select>
+            </label>
+            <label>Τεύχος
+              <select id="quizIssue"><option value="all">Όλα τα τεύχη</option></select>
+            </label>
+            <label>Θεματική
+              <select id="quizTopic"><option value="all">Όλες οι θεματικές</option></select>
+            </label>
+            <label>Δυσκολία
+              <select id="quizDifficulty">
+                <option value="all">Όλες</option><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option><option value="expert">Expert</option>
+              </select>
+            </label>
+            <label>Αριθμός ερωτήσεων
+              <select id="quizCount"><option>10</option><option>20</option><option selected>30</option><option>50</option><option>100</option><option value="0">∞ Συνεχές</option></select>
+            </label>
+            <label class="check"><input type="checkbox" id="dynamicQuestions" checked /> Παραμετρικές ερωτήσεις (νέοι αριθμοί κάθε φορά)</label>
+            <label class="check"><input type="checkbox" id="shuffleAnswers" checked /> Ανακάτεμα απαντήσεων</label>
+            <button class="btn primary full" id="startQuizBtn">Έναρξη</button>
+            <p class="hint">Συντομεύσεις: 1–4 για απάντηση · Enter για επόμενη.</p>
+          </aside>
+
+          <div class="card pad quiz-stage" id="quizStage">
+            <div class="empty-state" id="quizEmpty">
+              <div class="big-icon">◎</div><h2>Adaptive Multiple Choice</h2>
+              <p>Διάλεξε ρυθμίσεις και ξεκίνα. Το continuous mode μπορεί να παράγει επαναλαμβανόμενες, παραμετρικές παραλλαγές χωρίς πρακτικό όριο.</p>
+            </div>
+            <div id="quizRunner" hidden>
+              <div class="runner-head">
+                <div><span id="qCounter">1 / 30</span><span class="pill" id="qDifficulty">MEDIUM</span><span class="pill muted" id="qTopic">Stationarity</span></div>
+                <div id="quizScore">0 σωστές</div>
+              </div>
+              <div class="progress-track"><div class="progress-fill" id="quizProgress"></div></div>
+              <article class="question-card">
+                <div class="source-line" id="qSource">Τεύχος Β΄</div>
+                <h2 id="qText"></h2>
+                <div class="choices" id="qChoices"></div>
+              </article>
+              <div class="feedback" id="qFeedback" hidden></div>
+              <div class="runner-actions"><button class="btn secondary" id="stopQuizBtn">Τερματισμός</button><button class="btn primary" id="nextQuestionBtn" disabled>Επόμενη →</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-review">
+        <div class="card pad">
+          <div class="section-head"><div><span class="eyebrow">SPACED REPETITION</span><h2>Επανάληψη σήμερα</h2><p>Οι αδύναμες ή πρόσφατα λανθασμένες έννοιες επιστρέφουν νωρίτερα.</p></div><button class="btn primary" id="startDueBtn">Ξεκίνα due review</button></div>
+          <div class="stats-grid compact">
+            <article class="stat inset"><span>Due</span><strong id="reviewDue">0</strong></article>
+            <article class="stat inset"><span>Λάθη</span><strong id="reviewMistakes">0</strong></article>
+            <article class="stat inset"><span>Mastered</span><strong id="reviewMastered">0</strong></article>
+            <article class="stat inset"><span>Concepts seen</span><strong id="reviewSeen">0</strong></article>
+          </div>
+        </div>
+        <div class="card pad">
+          <div class="section-head"><div><span class="eyebrow">QUEUE</span><h3>Επόμενες επαναλήψεις</h3></div></div>
+          <div id="reviewQueue" class="table-wrap"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-exam">
+        <div class="exam-layout">
+          <div class="card pad">
+            <span class="eyebrow">EXAM MODE</span><h2>Προσομοίωση εξέτασης</h2>
+            <p>Χωρίς feedback ανά ερώτηση. Βλέπεις αποτελέσματα και εξηγήσεις μόνο στο τέλος.</p>
+            <div class="form-grid">
+              <label>Ερωτήσεις<select id="examCount"><option>20</option><option selected>40</option><option>60</option><option>100</option></select></label>
+              <label>Χρόνος<select id="examMinutes"><option value="0">Χωρίς χρονόμετρο</option><option>30</option><option selected>45</option><option>60</option><option>90</option></select></label>
+              <label>Τεύχος<select id="examIssue"><option value="all">Όλα</option></select></label>
+              <label>Δυσκολία<select id="examDifficulty"><option value="all">Μικτή</option><option value="medium">Medium+</option><option value="hard">Hard+</option><option value="expert">Expert</option></select></label>
+            </div>
+            <label class="check"><input type="checkbox" id="examDynamic" checked /> Συμπερίληψη παραμετρικών ερωτήσεων</label>
+            <button class="btn primary" id="startExamBtn">Έναρξη εξέτασης</button>
+          </div>
+          <div class="card pad exam-status">
+            <div class="exam-dial"><span id="examBest">—</span></div>
+            <h3>Καλύτερη επίδοση</h3>
+            <p id="examBestText">Δεν υπάρχει ολοκληρωμένη εξέταση ακόμη.</p>
+          </div>
+        </div>
+        <div class="card pad" id="examRunnerCard" hidden>
+          <div class="runner-head"><div><strong id="examCounter">1 / 40</strong> <span class="pill" id="examTimer">45:00</span></div><button class="btn mini danger" id="endExamBtn">Παράδοση</button></div>
+          <div class="progress-track"><div class="progress-fill" id="examProgress"></div></div>
+          <article class="question-card"><div class="source-line" id="examSource"></div><h2 id="examText"></h2><div class="choices" id="examChoices"></div></article>
+          <div class="runner-actions"><button class="btn secondary" id="examPrevBtn">← Προηγούμενη</button><button class="btn primary" id="examNextBtn">Επόμενη →</button></div>
+        </div>
+        <div class="card pad" id="examResults" hidden></div>
+      </section>
+
+      <section class="view" id="view-progress">
+        <div class="stats-grid">
+          <article class="stat card"><span>Mastery</span><strong id="pMastery">0%</strong><small>weighted score</small></article>
+          <article class="stat card"><span>Correct</span><strong id="pCorrect">0</strong><small>σωστές απαντήσεις</small></article>
+          <article class="stat card"><span>Wrong</span><strong id="pWrong">0</strong><small>λάθος απαντήσεις</small></article>
+          <article class="stat card"><span>Best exam</span><strong id="pBestExam">—</strong><small>τελική εξέταση</small></article>
+        </div>
+        <div class="two-col">
+          <article class="card pad"><div class="section-head"><div><span class="eyebrow">BY TOPIC</span><h3>Knowledge map</h3></div></div><div id="topicProgress"></div></article>
+          <article class="card pad"><div class="section-head"><div><span class="eyebrow">BY ISSUE</span><h3>Πρόοδος ανά τεύχος</h3></div></div><div id="issueProgress"></div></article>
+        </div>
+        <article class="card pad"><div class="section-head"><div><span class="eyebrow">RECENT ACTIVITY</span><h3>Τελευταίες απαντήσεις</h3></div></div><div id="activityTable" class="table-wrap"></div></article>
+      </section>
+
+      <section class="view" id="view-settings">
+        <div class="two-col settings-grid">
+          <article class="card pad">
+            <span class="eyebrow">GITHUB PUBLIC REPOSITORY</span><h2>Σύνδεση βιβλιοθήκης</h2>
+            <p>Η εφαρμογή μπορεί να διαβάζει <code>manifest.json</code> και <code>data/questions.json</code> από public GitHub repository. Δεν αποθηκεύει token και δεν πρέπει να βάλεις private token στον browser.</p>
+            <div class="form-grid one">
+              <label>GitHub owner<input id="ghOwner" placeholder="π.χ. pzarogoulidis" /></label>
+              <label>Repository<input id="ghRepo" placeholder="π.χ. time-series-mastery" /></label>
+              <label>Branch<input id="ghBranch" value="main" /></label>
+            </div>
+            <div class="button-row"><button class="btn primary" id="saveGitHubBtn">Αποθήκευση & Sync</button><button class="btn secondary" id="useBundledBtn">Χρήση bundled αρχείων</button></div>
+            <div class="sync-status" id="syncStatus">Bundled mode.</div>
+          </article>
+          <article class="card pad">
+            <span class="eyebrow">DATA</span><h2>Backup προόδου</h2>
+            <p>Η πρόοδος αποθηκεύεται μόνο στον browser σου. Μπορείς να την εξάγεις και να την επαναφέρεις.</p>
+            <div class="button-stack"><button class="btn secondary" id="exportProgressBtn">Εξαγωγή progress.json</button><label class="btn secondary file-btn">Εισαγωγή progress.json<input type="file" id="importProgressInput" accept="application/json" hidden /></label><button class="btn danger" id="resetProgressBtn">Μηδενισμός προόδου</button></div>
+          </article>
+        </div>
+        <article class="card pad">
+          <span class="eyebrow">REPOSITORY STRUCTURE</span><h3>Αναμενόμενη δομή GitHub</h3>
+          <pre class="tree">/
+├── index.html
+├── style.css
+├── app.js
+├── manifest.json
+├── data/
+│   ├── questions.json
+│   └── builtin-data.js
+└── pdf/
+    ├── TEYXOS_A.pdf
+    ├── TEYXOS_B.pdf
+    ├── TEYXOS_C.pdf
+    ├── TEYXOS_D.pdf
+    ├── TEYXOS_E.pdf
+    └── TEYXOS_ST.pdf</pre>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/builtin-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
